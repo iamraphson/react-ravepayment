@@ -1,0 +1,35 @@
+{
+  "name": "react-ravepayment",
+  "version": "1.0.0",
+  "description": "This is a reactJS library for implementing rave payment gateway",
+  "main": "distribution/RavePayment.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamraphson/react-ravepayment.git"
+  },
+  "keywords": [
+    "Javascript",
+    "github",
+    "ReactJS",
+    "Open Source",
+    "payments",
+    "rave",
+    "ravepayment",
+    "flutterwave",
+    "Gateway"
+  ],
+  "author": "Ayeni Olusegun <nsegun5@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamraphson/react-ravepayment/issues"
+  },
+  "homepage": "https://github.com/iamraphson/react-ravepayment#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
