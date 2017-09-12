@@ -81,11 +81,12 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 
 ## Deployment
-1) Please change RavePay Inline script,you kept in the index.html to 
+WHEN DEPLOYING TO PRODUCTION/LIVE SYSTEM, take note of the following;
+1) Change RavePay Inline script,you kept in the index.html to 
 ```javascript
 <script src="//api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 ```
-2) Remember to Change RavePay PUBLIC KEY 
+2) Change RavePay PUBLIC KEY 
 
 ## Contributing
 1. Fork it!
