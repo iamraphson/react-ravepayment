@@ -81,7 +81,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 
 ## Deployment
-1) Please RavePay Inline script,you kept in the index.html to 
+1) Please change RavePay Inline script,you kept in the index.html to 
 ```javascript
 <script src="//api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 ```
