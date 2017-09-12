@@ -1,13 +1,13 @@
 # react-ravepayment
 
-This is a ReactJS library for implementing Rave Payment Gateway
+This is a ReactJS library for implementing RavePay Payment Gateway
 
 ###Demo
-![Alt text](React_App_2017-09-12 20-40-20.png?raw=true "Demo Image")
+![Alt text](React_App.png?raw=true "Demo Image")
 
 ### Get Started
 
-This React library provides a wrapper to add Rave Payment to your React application
+This React library provides a wrapper to add RavePay Payment to your React application
 
 ### Install
 ```
