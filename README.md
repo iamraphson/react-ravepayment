@@ -10,8 +10,8 @@ This is a ReactJS library for implementing RavePay Payment Gateway
 This React library provides a wrapper to add RavePay Payment to your React application
 
 ### Install
-```
-npm install git://github.com/iamraphson/react-paystack.git#master --save
+```bash
+npm install iamraphson/react-ravepayment --save
 ```
 
 Then go ahead and reference the Rave inline script in your index.html:
