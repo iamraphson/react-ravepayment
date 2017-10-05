@@ -31,7 +31,7 @@ Then go ahead and reference the Rave inline script in your index.html:
     		state = {
     		  key: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X", // RavePay PUBLIC KEY
     		  email: "foo@example.com", // customer email
-    		  amount: "1000" // equals NGN 1000. Minimum amount allow  of NGN500,
+    		  amount: "1000" // equals NGN 1000. Minimum amount allowed NGN 1 while on production or live system, it's 10
     	    }
     
     	  callback = (response) => {
