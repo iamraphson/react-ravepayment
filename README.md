@@ -11,7 +11,7 @@ This React library provides a wrapper to add RavePay Payment to your React appli
 
 ### Install
 ```bash
-npm install iamraphson/react-ravepayment --save
+npm install react-ravepayment --save
 ```
 
 Then go ahead and reference the Rave inline script in your index.html:
