@@ -2,7 +2,7 @@
 
 This is a ReactJS library for implementing RavePay Payment Gateway
 
-###Demo
+### Demo
 ![Alt text](React_App.png?raw=true "Demo Image")
 
 ### Get Started
