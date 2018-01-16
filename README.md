@@ -77,7 +77,7 @@ Then go ahead and reference the Rave inline script in your index.html:
     export default App
 ```
 
-Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/docs/rave-inline-js#section-parameter-reference) for other available options you can add to the tag
+Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/v1.0/reference#introduction) for other available options you can add to the tag
 
 
 ## Deployment
