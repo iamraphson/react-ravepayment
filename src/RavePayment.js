@@ -61,7 +61,7 @@ RavePayment.propTypes = {
 	custom_logo: PropTypes.string,
 	reference: PropTypes.string.isRequired,
 	email: PropTypes.string.isRequired,
-	amount: PropTypes.string.isRequired, //in Naira
+	amount: PropTypes.number.isRequired, //in Naira
   ravePubKey: PropTypes.string.isRequired,
   callback: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired
