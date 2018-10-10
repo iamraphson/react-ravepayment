@@ -8,13 +8,19 @@ export default class RavePayment extends Component {
 		  text: this.props.text || 'Make Payment',
 		  class: this.props.class || '',
 		  metadata: this.props.metadata || [{}],
-		  currency: this.props.currency || 'NGN',
-		  country: this.props.country || 'NG',
+		  currency: this.props.currency || 'GHS',
+		  country: this.props.country || 'GH',
 		  customer_firstname: this.props.customer_firstname || '',
 		  customer_lastname: this.props.customer_lastname || '',
 		  custom_title: this.props.custom_title || '',
 		  custom_description: this.props.custom_description || '',
-		  custom_logo: this.props.custom_logo || ''
+			custom_logo: this.props.custom_logo || '', //adds custom logo to the modal
+			subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
+			payment_method: this.props.payment_method || 'both', //falls back to card and account if none is specified
+			payment_plan: this.props.payment_plan || '', //the id of your payment plan
+			redirect_url: this.props.redirect_url || '', //calls this url after successful payment
+			hosted_payment: this.props.hosted_payment //opens the modal in a new page
+
 	  }
   }
 
@@ -33,9 +39,16 @@ export default class RavePayment extends Component {
 			customer_lastname: this.state.customer_lastname,
 			custom_title: this.state.custom_title,
 			custom_description: this.state.custom_description,
-			custom_logo: this.state.custom_logo
+			custom_logo: this.state.custom_logo,
+			subaccounts: this.state.subaccounts,
+			payment_method: this.state.payment_method,
+			payment_plan: this.state.payment_plan,
+			redirect_url: this.state.redirect_url,
+			hosted_payment: this.state.hosted_payment
+			
 		})
 	}
+
 
   render () {
     return (
@@ -64,6 +77,12 @@ RavePayment.propTypes = {
 	amount: PropTypes.number.isRequired, //in Naira
   ravePubKey: PropTypes.string.isRequired,
   callback: PropTypes.func.isRequired,
-  close: PropTypes.func.isRequired
+	close: PropTypes.func.isRequired,
+	subaccounts: PropTypes.array,
+	payment_method: PropTypes.string,
+	payment_plan: PropTypes.number,
+	redirect_url: PropTypes.string,
+	hosted_payment: PropTypes.number
+	
 }
 
