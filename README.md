@@ -14,11 +14,6 @@ This React library provides a wrapper to add RavePay Payment to your React appli
 npm install react-ravepayment --save
 ```
 
-Then go ahead and reference the Rave inline script in your index.html:
-```html
-<script src="//ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-```
-
 ### Usage
 
 ```javascript
@@ -67,6 +62,7 @@ Then go ahead and reference the Rave inline script in your index.html:
     		        ravePubKey={this.state.key}
     		        callback={this.callback}
     		        close={this.close}
+    		        isProduction={false}
     	        />
             </p>
           </div>
@@ -82,10 +78,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 ## Deployment
 WHEN DEPLOYING TO PRODUCTION/LIVE SYSTEM, take note of the following;
-1) Change RavePay Inline script,you kept in the index.html to 
-```javascript
-<script src="//api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-```
+1) Change isProduction attribute in the component tag to true i.e isProduction={true}
 2) Change RavePay PUBLIC KEY 
 3) Ensure you implement [webhooks](https://flutterwavedevelopers.readme.io/docs/events-webhooks) to receive automatic updates when a transaction happens.
 
