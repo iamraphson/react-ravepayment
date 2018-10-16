@@ -16,7 +16,7 @@ npm install react-ravepayment --save
 
 Then go ahead and reference the Rave inline script in your index.html:
 ```html
-<script src="//flw-pms-dev.eu-west-1.elasticbeanstalk.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+<script src="//ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 ```
 
 ### Usage
@@ -77,7 +77,7 @@ Then go ahead and reference the Rave inline script in your index.html:
     export default App
 ```
 
-Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/v1.0/reference#introduction) for other available options you can add to the tag
+Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/docs/rave-inline-1) for other available options you can add to the tag
 
 
 ## Deployment
@@ -87,6 +87,7 @@ WHEN DEPLOYING TO PRODUCTION/LIVE SYSTEM, take note of the following;
 <script src="//api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 ```
 2) Change RavePay PUBLIC KEY 
+3) Ensure you implement [webhooks](https://flutterwavedevelopers.readme.io/docs/events-webhooks) to receive automatic updates when a transaction happens.
 
 ## Contributing
 1. Fork it!
