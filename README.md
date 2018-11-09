@@ -55,7 +55,7 @@ npm install react-ravepayment --save
     	        <RavePaymentModal
     		        text="Make Payment"
     		        class="payButton"
-    		        metadata={[{Device : 'IPhone X'}]}
+    		        metadata={[{metaname:'Device', metavalue : 'IPhone X'}]}
     		        reference={this.getReference()}
     		        email={this.state.email}
     		        amount={this.state.amount}
