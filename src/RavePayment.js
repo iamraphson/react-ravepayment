@@ -10,20 +10,9 @@ class RavePayment extends Component {
       scriptLoaded: null,
       text: this.props.text || "Make Payment",
       class: this.props.class || "",
-      metadata: this.props.metadata || [{}],
       currency: this.props.currency || "NGN",
       country: this.props.country || "NG",
-      customer_firstname: this.props.customer_firstname || "",
-      customer_phone: this.props.customer_phone || "",
-      customer_lastname: this.props.customer_lastname || "",
-      custom_title: this.props.custom_title || "",
-      custom_description: this.props.custom_description || "",
-      custom_logo: this.props.custom_logo || "",
-      subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
-      payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
-      payment_plan: this.props.payment_plan || "", //the id of your payment plan
-      redirect_url: this.props.redirect_url || "", //calls this url after successful payment
-      hosted_payment: this.props.hosted_payment //opens the modal in a new page
+      custom_logo: this.props.custom_logo || ""
     };
   }
 
@@ -72,20 +61,20 @@ class RavePayment extends Component {
           PBFPubKey: this.props.ravePubKey,
           onclose: () => this.props.close(),
           callback: response => this.props.callback(response),
-          meta: this.state.metadata,
+          meta: this.props.metadata || [{}],
           currency: this.state.currency,
           country: this.state.country,
-          customer_firstname: this.state.customer_firstname,
-          customer_phone: this.state.customer_phone,
-          customer_lastname: this.state.customer_lastname,
-          custom_title: this.state.custom_title,
-          custom_description: this.state.custom_description,
+          customer_firstname: this.props.customer_firstname || "",
+          customer_phone: this.props.customer_phone || "",
+          customer_lastname: this.props.customer_lastname || "",
+          custom_title: this.props.custom_title || "",
+          custom_description: this.props.custom_description || "",
           custom_logo: this.state.custom_logo,
-          subaccounts: this.state.subaccounts,
-          payment_method: this.state.payment_method,
-          payment_plan: this.state.payment_plan,
-          redirect_url: this.state.redirect_url,
-          hosted_payment: this.state.hosted_payment
+          subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
+          payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
+          payment_plan: this.props.payment_plan || "", //the id of your payment plan
+          redirect_url: this.props.redirect_url || "", //calls this url after successful payment
+          hosted_payment: this.props.hosted_payment //opens the modal in a new page
         });
       });
   }
