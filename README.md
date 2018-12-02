@@ -19,35 +19,35 @@ npm install react-ravepayment --save
 ```javascript
     import React, { Component } from 'react'
     // import the library
-    import RavePaymentModal from 'react-ravepayment'
-    
+	import RavePaymentModal from 'react-ravepayment'
+
     class App extends Component {
-    
+
     		state = {
     		  key: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X", // RavePay PUBLIC KEY
     		  email: "foo@example.com", // customer email
     		  amount: "1000" // equals NGN 1000. Minimum amount allowed NGN 1 while on production or live system, it's 10
     	    }
-    
+
     	  callback = (response) => {
     		  console.log(response);
-    
+
     	  }
-    
+
     	  close = () => {
     		  console.log("Payment closed");
     	  }
-    
+
     	  getReference = () => {
     		  let text = "";
     		  let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
-    
+
     		  for( let i=0; i < 10; i++ )
     			  text += possible.charAt(Math.floor(Math.random() * possible.length));
-    
-    		  return text;
+
+			  return text;
     	  }
-    
+
     	render () {
         return (
           <div className='App'>
@@ -62,14 +62,15 @@ npm install react-ravepayment --save
     		        ravePubKey={this.state.key}
     		        callback={this.callback}
     		        close={this.close}
-    		        isProduction={false}
+					isProduction={false}
+					tag="button" {/*it can be button or a or input tag */}
     	        />
             </p>
           </div>
         )
       }
     }
-    
+
     export default App
 ```
 
@@ -79,7 +80,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 ## Deployment
 WHEN DEPLOYING TO PRODUCTION/LIVE SYSTEM, take note of the following;
 1) Change isProduction attribute in the component tag to true i.e isProduction={true}
-2) Change RavePay PUBLIC KEY 
+2) Change RavePay PUBLIC KEY
 3) Ensure you implement [webhooks](https://flutterwavedevelopers.readme.io/docs/events-webhooks) to receive automatic updates when a transaction happens.
 
 ## Contributing

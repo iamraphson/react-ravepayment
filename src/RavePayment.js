@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
 class RavePayment extends Component {
@@ -11,8 +11,7 @@ class RavePayment extends Component {
       text: this.props.text || "Make Payment",
       class: this.props.class || "",
       currency: this.props.currency || "NGN",
-      country: this.props.country || "NG",
-      custom_logo: this.props.custom_logo || ""
+      country: this.props.country || "NG"
     };
   }
 
@@ -69,7 +68,7 @@ class RavePayment extends Component {
           customer_lastname: this.props.customer_lastname || "",
           custom_title: this.props.custom_title || "",
           custom_description: this.props.custom_description || "",
-          custom_logo: this.state.custom_logo,
+          custom_logo: tthis.props.custom_logo || "",
           subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
           payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
           payment_plan: this.props.payment_plan || "", //the id of your payment plan
@@ -80,18 +79,24 @@ class RavePayment extends Component {
   }
 
   render() {
+    const CustomTag = `${this.props.tag}`;
+
     return (
-      <span>
-        <button className={this.state.class} onClick={this.payWithRave}>
+      <Fragment>
+        <CustomTag
+         className={this.state.class}
+         onClick={this.payWithRave}
+         >
           {this.state.text}
-        </button>
-      </span>
+        </CustomTag>
+      </Fragment>
     );
   }
 }
 
 RavePayment.defaultProps = {
-  isProduction: false
+  isProduction: false,
+  tag: 'button'
 };
 
 RavePayment.propTypes = {
@@ -117,7 +122,8 @@ RavePayment.propTypes = {
   payment_method: PropTypes.string,
   payment_plan: PropTypes.number,
   redirect_url: PropTypes.string,
-  hosted_payment: PropTypes.number
+  hosted_payment: PropTypes.number,
+  tag: PropTypes.oneOf(['button', 'a', 'input'])
 };
 
 export default RavePayment;

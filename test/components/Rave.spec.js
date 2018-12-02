@@ -17,21 +17,6 @@ const amount = 1000;
 const btnText = "Pay me, my money";
 
 describe("Rave Component", () => {
-  it("Rave component renders span", () => {
-    const RaveWrapper = mount(
-      <RavePayment
-        reference={reference}
-        email={email}
-        amount={amount}
-        callback={callback}
-        close={close}
-        custom_logo={logo}
-        ravePubKey={key}
-      />
-    );
-    expect(RaveWrapper.find("span")).to.have.length(1);
-  });
-
   it("Rave component renders button", () => {
     const RaveWrapper = mount(
       <RavePayment
@@ -45,6 +30,24 @@ describe("Rave Component", () => {
       />
     );
     expect(RaveWrapper.find("button")).to.have.length(1);
+  });
+
+  it("Rave component renders custom tag", () => {
+    const RaveWrapper = mount(
+      <RavePayment
+        reference={reference}
+        email={email}
+        amount={amount}
+        callback={callback}
+        close={close}
+        custom_logo={logo}
+        ravePubKey={key}
+        tag="a"
+      />
+    );
+
+    expect(RaveWrapper.find("button")).to.have.length(0);
+    expect(RaveWrapper.find("a")).to.have.length(1);
   });
 
   it("should have customize button text", () => {
@@ -75,11 +78,10 @@ describe("Rave Component", () => {
         ravePubKey={key}
       />
     );
-    const { text, currency, country, custom_logo } = RaveWrapper.state();
+    const { text, currency, country } = RaveWrapper.state();
     expect(text).to.equal("Make Payment");
     expect(currency).to.equal("NGN");
     expect(country).to.equal("NG");
-    expect(custom_logo).to.equal(logo);
   });
 
   it("should have props for reference, email, amount, callback, close, custom_logo, ravePubKey and not for custom_description, metadata", () => {
