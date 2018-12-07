@@ -4,7 +4,9 @@
   "description": "This is a reactJS library for implementing rave payment gateway",
   "main": "distribution/RavePayment.min.js",
   "scripts": {
-    "test": "mocha --reporter spec test/testSetup.js \"test/**/*.spec.js\""
+    "test": "mocha --reporter spec test/testSetup.js \"test/**/*.spec.js\"",
+    "start": "react-scripts start"
+
   },
   "repository": {
     "type": "git",
