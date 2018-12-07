@@ -124,7 +124,7 @@ RavePayment.propTypes = {
   payment_plan: PropTypes.number,
   redirect_url: PropTypes.string,
 	hosted_payment: PropTypes.number,
-	campaign_id: PropTypes.number,
+	campaign_id: PropTypes.string,
   tag: PropTypes.oneOf(['button', 'a', 'input'])
 };
 
