@@ -73,7 +73,8 @@ class RavePayment extends Component {
           payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
           payment_plan: this.props.payment_plan || "", //the id of your payment plan
           redirect_url: this.props.redirect_url || "", //calls this url after successful payment
-          hosted_payment: this.props.hosted_payment //opens the modal in a new page
+					hosted_payment: this.props.hosted_payment, //opens the modal in a new page
+					campaign_id: this.props.campaign_id || "" //allows discounts
         });
       });
   }
@@ -122,7 +123,8 @@ RavePayment.propTypes = {
   payment_method: PropTypes.string,
   payment_plan: PropTypes.number,
   redirect_url: PropTypes.string,
-  hosted_payment: PropTypes.number,
+	hosted_payment: PropTypes.number,
+	campaign_id: PropTypes.number,
   tag: PropTypes.oneOf(['button', 'a', 'input'])
 };
 
