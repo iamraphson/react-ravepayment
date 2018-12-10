@@ -73,8 +73,8 @@ class RavePayment extends Component {
           payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
           payment_plan: this.props.payment_plan || "", //the id of your payment plan
           redirect_url: this.props.redirect_url || "", //calls this url after successful payment
-					hosted_payment: this.props.hosted_payment, //opens the modal in a new page
-					campaign_id: this.props.campaign_id || "" //allows discounts
+          hosted_payment: this.props.hosted_payment, //opens the modal in a new page
+          campaign_id: this.props.campaign_id || "" //allows discounts
         });
       });
   }
@@ -84,10 +84,7 @@ class RavePayment extends Component {
 
     return (
       <Fragment>
-        <CustomTag
-         className={this.state.class}
-         onClick={this.payWithRave}
-         >
+        <CustomTag className={this.state.class} onClick={this.payWithRave}>
           {this.state.text}
         </CustomTag>
       </Fragment>
@@ -97,7 +94,7 @@ class RavePayment extends Component {
 
 RavePayment.defaultProps = {
   isProduction: false,
-  tag: 'button'
+  tag: "button"
 };
 
 RavePayment.propTypes = {
@@ -123,9 +120,9 @@ RavePayment.propTypes = {
   payment_method: PropTypes.string,
   payment_plan: PropTypes.number,
   redirect_url: PropTypes.string,
-	hosted_payment: PropTypes.number,
-	campaign_id: PropTypes.string,
-  tag: PropTypes.oneOf(['button', 'a', 'input'])
+  hosted_payment: PropTypes.number,
+  campaign_id: PropTypes.string,
+  tag: PropTypes.oneOf(["button", "a", "input"])
 };
 
 export default RavePayment;

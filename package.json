@@ -1,17 +1,13 @@
 {
   "name": "react-ravepayment",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "This is a reactJS library for implementing rave payment gateway",
   "main": "distribution/RavePayment.min.js",
   "scripts": {
     "test": "mocha --reporter spec test/testSetup.js \"test/**/*.spec.js\"",
-<<<<<<< HEAD
-    "start": "react-scripts start"
-
-=======
+    "start": "react-scripts start",
     "format": "prettier --write '**/**/*.{js,}'",
     "dist": "./node_modules/.bin/babel ./src/RavePayment.js --out-file ./distribution/RavePayment.min.js --source-maps true"
->>>>>>> upstream/master
   },
   "repository": {
     "type": "git",
