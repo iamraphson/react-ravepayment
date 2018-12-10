@@ -68,7 +68,7 @@ class RavePayment extends Component {
           customer_lastname: this.props.customer_lastname || "",
           custom_title: this.props.custom_title || "",
           custom_description: this.props.custom_description || "",
-          custom_logo: tthis.props.custom_logo || "",
+          custom_logo: this.props.custom_logo || "",
           subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
           payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
           payment_plan: this.props.payment_plan || "", //the id of your payment plan
