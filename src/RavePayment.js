@@ -29,7 +29,7 @@ class RavePayment extends Component {
     const script = document.createElement("script");
     script.src = !this.props.isProduction
       ? "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"
-      : "https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline-deprecated.js";
+      : "https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js";
     document.getElementsByTagName("head")[0].appendChild(script);
     if (script.readyState) {
       // IE
