@@ -81,7 +81,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 | props        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
-| ravePubKey     |  Your merchant public key, see how to get your API Keys [Live](https://rave.flutterwave.com/dashboard/settings/apis) | `String` | Required
+| ravePubKey     |  Your merchant public key, see how to get your API Keys [Here](https://rave.flutterwave.com/dashboard/settings/apis) | `String` | Required
 | text      |  Text to be displayed on the Rave Checkout Button. | `String` | Required
 | metadata      |  Any other custom data you wish to pass. | `Array` | Not Required
 | currency      |  Currency to charge in. Defaults to NGN | `String` | Not Required
@@ -96,7 +96,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 | callback      |  	A function to be called on successful card charge. Users can always be redirected to a successful or failed page supplied by the merchant here based on the response. | `Function` | Required
 | close      |  A function to be called when the pay modal is closed. | `Function` | Required
 | subaccounts     |  	This is an array of objects containing the subaccount IDs to split the payment into. | `Array` | Not Required
-| payment_method     |  This allows you select the payment option you want for your users, see Choose Payment Methods for more info.[Live](https://developer.flutterwave.com/docs/splitting-payment-methods)| `String` | Not Required
+| payment_method     |  This allows you select the payment option you want for your users. [see Choose Payment Methods for more info.](https://developer.flutterwave.com/docs/splitting-payment-methods)| `String` | Not Required
 | payment_plan      |  This is the payment plan ID used for Recurring billing ]. | `Number` | not Required
 | redirect_url      |  	URL to redirect to when a transaction is completed. This is useful for 3DSecure payments so we can redirect your customer back to a custom page you want to show them. | `String` | Not Required
 | payment_hosted      |  allow you load rave's modal on a different page, this can be useful for browsers like opera or for people who don't want the modal to load on their site | `Number` | Not Required
