@@ -81,8 +81,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 | props        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
-| publickey      |  This is the publickey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard | `String` | Required
-| encryptionkey      |  This is the encryption key that can be gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://rave.flutterwave.com/dashboard/settings/apis)
+| ravePubKey     |  Your merchant public key, see how to get your API Keys | `String` | Required
 | text      |  Your Unique transaction reference. | `String` | Required
 | metadata      |  Any other custom data you wish to pass. | `Array` | Not Required
 | currency      |  Currency to charge in. Defaults to NGN | `String` | Not Required
@@ -90,12 +89,10 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 | customer_firstname      |  Firstname of the customer. | `String` | Not Required
 | customer_lastname      |  Lastname of the customer. | `String` | Not Required
 | custom_title       |  Text to be displayed as the title of the payment modal. | `String` | Not Required
-| custom_description       |  Text to be displayed as a short modal description. | `String` | Not Required
 | custom_logo      |  Link to the Logo image. | `String` | Required
 | reference       |  Your Unique transaction reference. | `String` | Required
 | email      |  This is the email of the customer | `String` | Required
 | amount      |  This is the amount to be charged from card/account | `Number` | Required
-| ravePubKey     |  Your merchant public key, see how to get your API Keys | `String` | Required
 | callback      |  	A function to be called on successful card charge. Users can always be redirected to a successful or failed page supplied by the merchant here based on the response. | `Function` | Required
 | close      |  A function to be called when the pay modal is closed. | `Function` | Required
 | subaccounts     |  	This is an array of objects containing the subaccount IDs to split the payment into. | `Array` | Not Required
