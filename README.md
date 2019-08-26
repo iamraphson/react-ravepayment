@@ -83,11 +83,27 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 | ------------- |:-------------:| -----:| -----:|
 | publickey      |  This is the publickey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard | `String` | Required
 | encryptionkey      |  This is the encryption key that can be gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://rave.flutterwave.com/dashboard/settings/apis)
+| text      |  Your Unique transaction reference. | `String` | Required
+| metadata      |  Any other custom data you wish to pass. | `Array` | Required
+| currency      |  currency to charge in. Defaults to NGN | `String` | Required
+| country      |  route country. Defaults to NG | `String` | 
+| customer_firstname      |  firstname of the customer. | `String` | Required
+| customer_lastname      |  lastname of the customer. | `String` | Required
+| custom_title       |  Text to be displayed as the title of the payment modal. | `String` | 
+| custom_description       |  Text to be displayed as a short modal description. | `String` | Required
+| custom_logo      |  Link to the Logo image. | `String` | Required
+| reference       |  This is the email of the customer | `String` | Required
 | email      |  This is the email of the customer | `String` | Required
-| amount      |  This is the amount to be charged from card/account | `String` | Required
-| ravePubKey     |  This is the rave public key obtained from the rave dashboard | `String` | Required
-| callback      |  This is the function that receives data for a successful transaction | `Function` | Required
-| close      |  This is the function that closes the payment window, it controls the screen that displays after payment | `Function` | Required
+| amount      |  This is the amount to be charged from card/account | `Number` | Required
+| ravePubKey     |  Your merchant public key, see how to get your API Keys | `String` | Required
+| callback      |  	A function to be called on successful card charge. Users can always be redirected to a successful or failed page supplied by the merchant here based on the response. | `Function` | Required
+| close      |  A function to be called when the pay modal is closed. | `Function` | Required
+| subaccounts     |  	This is an array of objects containing the subaccount IDs to split the payment into. | `Array` | Required
+| payment_method      |  This allows you select the payment option you want for your users, see Choose Payment Methods for more info.
+ | `String` | Required
+| payment_plan      |  This is the payment plan ID used for Recurring billing ]. | `Number` | Required
+| redirect_url      |  	URL to redirect to when a transaction is completed. This is useful for 3DSecure payments so we can redirect your customer back to a custom page you want to show them. | `String` | Required
+| payment_hosted      |  This is the email of the customer | `Number` | Required
 | IsProduction      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
 
 
