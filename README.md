@@ -83,14 +83,12 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 | ------------- |:-------------:| -----:| -----:|
 | publickey      |  This is the publickey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard | `String` | Required
 | encryptionkey      |  This is the encryption key that can be gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://rave.flutterwave.com/dashboard/settings/apis)
-| amount      |  This is the amount to be charged from card/account | `String` | Required
 | email      |  This is the email of the customer | `String` | Required
-| phone      |  This is the phone number of the customer | `String` | Not Required
-| onSuccess      |  This is the function that receives data for a successful transaction | `Function` | Required
-| onFailure      |  This is the function that receives data for a failed transaction | `Function` | Required
-| onClose      |  This is the function that closes the payment window, it controls the screen that displays after payment | `Function` | Required
-| country      |  This is the country you are transacting from eg. NG, GH,KE, ZA | `String` | Not Required (defaults to NG)
-| production      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
+| amount      |  This is the amount to be charged from card/account | `String` | Required
+| ravePubKey     |  This is the rave public key obtained from the rave dashboard | `String` | Required
+| callback      |  This is the function that receives data for a successful transaction | `Function` | Required
+| close      |  This is the function that closes the payment window, it controls the screen that displays after payment | `Function` | Required
+| IsProduction      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
 
 
 ## Deployment
