@@ -99,11 +99,10 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 | callback      |  	A function to be called on successful card charge. Users can always be redirected to a successful or failed page supplied by the merchant here based on the response. | `Function` | Required
 | close      |  A function to be called when the pay modal is closed. | `Function` | Required
 | subaccounts     |  	This is an array of objects containing the subaccount IDs to split the payment into. | `Array` | Required
-| payment_method      |  This allows you select the payment option you want for your users, see Choose Payment Methods for more info.
- | `String` | Required
+| payment_method     |  This allows you select the payment option you want for your users, see Choose Payment Methods for more info.| `String` | Required
 | payment_plan      |  This is the payment plan ID used for Recurring billing ]. | `Number` | Required
 | redirect_url      |  	URL to redirect to when a transaction is completed. This is useful for 3DSecure payments so we can redirect your customer back to a custom page you want to show them. | `String` | Required
-| payment_hosted      |  This is the email of the customer | `Number` | Required
+| payment_hosted      |  allow you load rave's modal on a different page, this can be useful for browsers like opera or for people who don't want the modal to load on their site | `Number` | Required
 | IsProduction      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
 
 
