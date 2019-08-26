@@ -81,7 +81,7 @@ Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/doc
 
 | props        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
-| ravePubKey     |  Your merchant public key, see how to get your API Keys | `String` | Required
+| ravePubKey     |  Your merchant public key, see how to get your API Keys [Live](https://rave.flutterwave.com/dashboard/settings/apis) | `String` | Required
 | text      |  Text to be displayed on the Rave Checkout Button. | `String` | Required
 | metadata      |  Any other custom data you wish to pass. | `Array` | Not Required
 | currency      |  Currency to charge in. Defaults to NGN | `String` | Not Required
