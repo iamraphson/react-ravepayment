@@ -70,7 +70,7 @@ class RavePayment extends Component {
           custom_description: this.props.custom_description || "",
           custom_logo: this.props.custom_logo || "",
           subaccounts: this.props.subaccounts || [{}], //splits payments into subaccounts provided
-          payment_method: this.props.payment_method || "both", //falls back to card and account if none is specified
+          payment_options: this.props.payment_method || "both", //falls back to card and account if none is specified
           payment_plan: this.props.payment_plan || "", //the id of your payment plan
           redirect_url: this.props.redirect_url || "", //calls this url after successful payment
           hosted_payment: this.props.hosted_payment, //opens the modal in a new page
@@ -117,7 +117,7 @@ RavePayment.propTypes = {
   callback: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   subaccounts: PropTypes.array,
-  payment_method: PropTypes.string,
+  payment_options: PropTypes.string,
   payment_plan: PropTypes.number,
   redirect_url: PropTypes.string,
   hosted_payment: PropTypes.number,
