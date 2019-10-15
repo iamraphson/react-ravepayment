@@ -2,13 +2,18 @@
   "name": "react-ravepayment",
   "version": "3.0.0",
   "description": "This is a reactJS library for implementing rave payment gateway",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "tsc --noEmit && mocha --reporter spec test/testSetup.js \"test/**/*.spec.js\"",
+    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "format": "prettier --write '**/**/*.{js,}'",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && rollup -c",
     "lint": "eslint --ext .js,.ts,.tsx,.jsx --ignore-path .gitignore .",
     "lint:ci": "eslint --ext .js,.ts,.tsx,.jsx --ignore-path .gitignore --report-unused-disable-directives .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "tsc": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -36,6 +41,8 @@
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/runtime": "^7.6.3",
     "@types/react": "^16.9.6",
     "@types/react-dom": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
@@ -48,7 +55,16 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "^2.1.1",
+    "rollup": "^1.24.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.24.3",
     "sinon": "^7.1.1",
     "typescript": "^3.6.3"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

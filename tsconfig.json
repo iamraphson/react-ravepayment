@@ -30,6 +30,14 @@
     "target": "es5",
     "baseUrl": "./"
   },
-  "exclude": ["node_modules", "test", "example", "**/*.spec.ts"],
+  "exclude": [
+    "node_modules",
+    "test",
+    "example",
+    "dist",
+    "**/*.spec.ts",
+    "rollup.config.js",
+    "build"
+  ],
   "include": ["src"]
 }
