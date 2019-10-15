@@ -3,15 +3,22 @@ import RavePaymentProvider from './rave-provider';
 import {RaveProviderProps} from './types';
 import RavePaymentContent from './rave-context';
 
+type PaymentChildren = (options: {
+  initializePayment: Function;
+  onClose: Function;
+  onSuccess: Function;
+  ref: any;
+}) => JSX.Element;
+
 function RavePayment({
   children,
   ref,
 }: {
-  children: JSX.Element;
+  children: PaymentChildren;
   ref: any;
 }): React.FunctionComponentElement<any> {
   const {initializePayment, onClose, onSuccess} = useContext(RavePaymentContent);
-  return React.cloneElement(children, {
+  return children({
     initializePayment,
     onClose,
     onSuccess,
@@ -21,7 +28,7 @@ function RavePayment({
 
 export default forwardRef(
   (
-    {children, ...props}: Omit<RaveProviderProps, 'children'> & {children: JSX.Element},
+    {children, ...props}: Omit<RaveProviderProps, 'children'> & {children: PaymentChildren},
     ref: any,
   ) => (
     <RavePaymentProvider {...props}>

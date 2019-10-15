@@ -1,5 +1,5 @@
 import React from 'react';
-import { RaveProvider, RavePaymentButton, useRavePayment } from 'react-ravepayment';
+import { RaveProvider, RavePaymentButton, useRavePayment, RavePayment } from 'react-ravepayment';
 import './App.css';
 
 
@@ -30,6 +30,9 @@ function App() {
     <div className="App">
       <RaveProvider {...props}>
         <RavePaymentButton>Pay 2000</RavePaymentButton>
+        <RavePayment>
+          {({ initializePayment }) => <button onClick={() => initializePayment()}>Use render props 2000</button>}
+        </RavePayment>
       </RaveProvider>
       <RaveHookExample />
     </div>
