@@ -5,7 +5,7 @@ import {constructPaymentOption} from './utils';
 
 export default function useRavePayment(
   options: RaveProps,
-): {initializePayment: (onSuccess: Function, onClose: Function) => void} {
+): {initializePayment: (onSuccess?: Function, onClose?: Function) => void} {
   const {
     customer_email,
     customer_phone,
@@ -32,14 +32,12 @@ export default function useRavePayment(
   } = options;
   const [scriptLoaded, scriptError] = useRaveScript(production);
 
-  function initializePayment(onSuccess: Function, onClose: Function): void {
+  function initializePayment(onSuccess?: Function, onClose?: Function): void {
     if (scriptError) {
       throw new Error('Unable to load flutterwave script');
     }
     if (scriptLoaded) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      window.getpaidSetup({
+      const raveOption = {
         customer_email,
         customer_phone,
         amount,
@@ -61,9 +59,12 @@ export default function useRavePayment(
         payment_plan,
         hosted_payment,
         campaign_id,
-        onClose,
-        callback: onSuccess,
-      });
+        onClose: onClose ? onClose : (): void => {},
+        callback: onSuccess ? onSuccess : (): void => {},
+      };
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      window.getpaidSetup(raveOption);
     }
   }
 
