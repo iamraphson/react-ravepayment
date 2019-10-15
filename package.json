@@ -61,7 +61,6 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
-    "sinon": "^7.1.1",
     "typescript": "^3.6.3"
   },
   "files": [
