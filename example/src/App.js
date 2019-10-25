@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <RaveProvider {...props}>
         <RavePaymentButton>Pay 2000</RavePaymentButton>
-        <RavePayment>
+        <RavePayment {...props}>
           {({ initializePayment }) => <button onClick={() => initializePayment()}>Use render props 2000</button>}
         </RavePayment>
       </RaveProvider>
