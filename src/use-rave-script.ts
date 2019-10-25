@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react';
 
+// TODO: Provide an error if the user is trying to initialize the two mode concurrently
+// For example when a user has already loaded in development and then trying to load in production there should be an error to warn the user
+
 const cachedScripts: string[] = [];
 
 export default function useRaveScript(production: boolean): boolean[] {
@@ -19,6 +22,7 @@ export default function useRaveScript(production: boolean): boolean[] {
         loaded: true,
         error: false,
       });
+      return (): any => {};
     } else {
       cachedScripts.push(src);
 

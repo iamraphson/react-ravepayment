@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {RaveProps} from './types';
-import useRaveScript from './useRaveScript';
+import useRaveScript from './use-rave-script';
 import {constructPaymentOption} from './utils';
 
 export default function useRavePayment(
@@ -62,7 +62,6 @@ export default function useRavePayment(
         onClose: onClose ? onClose : (): void => {},
         callback: onSuccess ? onSuccess : (): void => {},
       };
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       window.getpaidSetup(raveOption);
     }
