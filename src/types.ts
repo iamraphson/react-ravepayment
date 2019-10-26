@@ -1,4 +1,16 @@
-type Currency = 'NGN' | 'USD';
+type Currency =
+  | 'NGN'
+  | 'USD'
+  | 'GHS'
+  | 'KES'
+  | 'UGX'
+  | 'ZMW'
+  | 'RWF'
+  | 'XAF'
+  | 'XOF'
+  | 'ZAR'
+  | 'TZS';
+type Country = 'NG' | 'GH' | 'KE' | 'ZA' | 'TX' | string;
 export type PaymentOptions =
   | 'card'
   | 'account'
@@ -24,7 +36,7 @@ export interface RaveProps {
   pay_button_text?: string;
   integrity_hash?: string;
   currency?: Currency;
-  country?: string;
+  country?: Country;
   custom_title?: string;
   custom_description?: string;
   custom_logo?: string;
