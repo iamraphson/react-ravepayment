@@ -3,6 +3,7 @@
   "version": "2.0.8",
   "description": "This is a reactJS library for implementing rave payment gateway",
   "main": "distribution/RavePayment.min.js",
+  "typings": "index.d.ts",
   "scripts": {
     "test": "mocha --reporter spec test/testSetup.js \"test/**/*.spec.js\"",
     "start": "react-scripts start",
