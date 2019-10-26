@@ -4,6 +4,7 @@
   "description": "This is a reactJS library for implementing rave payment gateway",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "typings": "dist/index.d.ts",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "prepublish": "npm run build",
