@@ -13,7 +13,8 @@ export default {
   },
   menu: [
     {name: 'Introduction'},
-    {name: 'Usage', menu: ['Hooks', 'Functional Component', 'Context', 'Class Component']},
+    {name: 'Usage', menu: ['Hooks', 'Functional Component', 'Class Component']},
+    {name: 'Parameters'},
     {name: 'API Reference'},
   ],
 };
