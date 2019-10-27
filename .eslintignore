@@ -61,4 +61,6 @@ typings/
 
 dist/
 
+.docz/
+
 /example

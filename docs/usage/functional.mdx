@@ -1,0 +1,116 @@
+---
+name: Functional Component
+menu: Usage
+route: '/usage/functional'
+---
+
+## Functional component
+
+ReactJs community has started with the adoption of usig functional component and I have to say it has been really great to have functional do what we want withoput having to worry much about react lifecycle. The example below shows how you can use the `rave-payment` in functional component
+
+```js
+import React from 'react';
+import {RaveProvider, RavePaymentButton} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  onSuccess: () => {},
+  onClose: () => {},
+};
+
+const App = () => {
+  return (
+    <div>
+      <RaveProvider {...config}>
+        <RavePaymentButton>Pay 2000</RavePaymentButton>
+        {/* <RavePaymentButton text="Pay 2000" /> */}
+      </RaveProvider>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Styling the RavePaymentButton
+
+The RavePaymentButton can be made just the way you wat by providing all `className` props or `style` props
+
+```js
+import React from 'react';
+import {RaveProvider, RavePaymentButton} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  onSuccess: () => {},
+  onClose: () => {},
+};
+
+const App = () => {
+  return (
+    <div>
+      <RaveProvider {...config}>
+        <RavePaymentButton text="Pay 2000" className="custom-component" />
+      </RaveProvider>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Using custom component
+
+You can also use custom component or nested children to trigger the `rave-payment` `initializePayment` function. This gives you the flexibility to use the `rave-payment` in more component with just one initialization.
+
+```js
+import React from 'react';
+import {RaveProvider, RavePayment} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+
+};
+
+const App = () => {
+  function onClose() {
+    ...
+  }
+
+  function onSuccess() {
+    ...
+  }
+
+  return (
+    <div>
+      <RavePayment {...config}>
+        {({initializePayment}) => <button onClick={() => initializePayment(onSuccess, onClose)}>Pay 2000</button>}
+      </RavePayment>
+    </div>
+  );
+};
+
+export default App;
+```
+
+### NOTE
+
+You cannot use the `initializePayment` payment function in a your handler as follows:
+
+```js
+<button onClick={initializePayment}>Pay 2000</button>
+```
+
+the function requires two parameters which are optinal however using it like above would be passing the default parameter `event` from `onClick` handler on a component and that would cause an unitented behaviour.

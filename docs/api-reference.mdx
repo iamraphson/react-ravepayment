@@ -1,0 +1,46 @@
+---
+name: API Reference
+route: '/reference/api'
+---
+
+# API
+
+`react-ravepayment` exports the following methods:
+
+- [`useRavePayment`](/reference/api#useRavePayment)
+- [`RaveProvider`](/reference/api#RaveProvider)
+- [`RavePaymentContent`](/reference/api#RavePaymentContent)
+- [`RavePayment`](/reference/api#RavePayment)
+- [`RavePaymentButton`](/reference/api#RavePaymentButton)
+
+---
+
+## `useRavePayment`
+
+```js
+function useRavePayment(
+  options: RaveProps
+): {initializePayment: (onSuccess?: Function, onClose?: Function) => void}
+```
+
+Crete an instance of `rave-payment and attached the rave payment script to the page.
+
+The `useRavePayment` function accepts the following arguments:
+
+### `options`
+
+An options object use to create the instance of the rave payment. See the
+[`useRavePayment` Options](/reference/api#useRavePayment-options) section for more details.
+
+## `useRavePayment` Options
+
+The `useRavePayment` function accepts the following options as parameter:
+
+### `customer_email`
+
+The initial values to pass as `props` to the `callback` function of `renderHook.
+
+### `wrapper`
+
+A React component to wrap the test component in when rendering. This is usually used to add context
+providers from `React.createContext` for the hook to access with `useContext`.

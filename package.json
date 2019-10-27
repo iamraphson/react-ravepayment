@@ -18,7 +18,9 @@
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --verbose --env=jsdom",
     "test:coverage": "jest --verbose --coverage --watchAll=false --env=jsdom",
-    "test:ci": "npm run test:coverage --ci --maxWorkers=2 --reporters=default --silent"
+    "test:ci": "npm run test:coverage --ci --maxWorkers=2 --reporters=default --silent",
+    "docs:dev": "docz dev --typescript",
+    "docs:build": "docz build --typescript"
   },
   "repository": {
     "type": "git",
@@ -56,6 +58,8 @@
     "@types/react-dom": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
+    "docz": "^2.0.0-rc.64",
+    "docz-theme-default": "1.2.0",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-jest": "^22.20.0",
