@@ -8,7 +8,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "prepublish": "npm run build",
-    "prepare": "npm run build",
+    "prepare": "npm run build && npm run docs:build",
     "format": "prettier --write '**/**/*.{js,}'",
     "build": "rm -rf dist && rollup -c",
     "lint": "eslint --ext .js,.ts,.tsx,.jsx --ignore-path .eslintignore .",
