@@ -4,7 +4,7 @@ A React library wrapper for implementing ReavePay Payment Gateway
 
 ## Demo
 
-![Alt text](React_App.png?raw=true 'Demo Image')
+![Alt text](React_App.png?raw=true "Demo Image")
 
 ### Installation
 
@@ -23,19 +23,19 @@ yarn add react-ravepayment --save
 ### Hooks
 
 ```js
-import React, {Component} from 'react';
-import {useRavePayment} from 'react-ravepayment';
+import React, { Component } from "react";
+import { useRavePayment } from "react-ravepayment";
 
 const config = {
-  txref: 'rave-123456',
-  customer_email: 'user@example.com',
-  customer_phone: '234099940409',
+  txref: "rave-123456",
+  customer_email: "user@example.com",
+  customer_phone: "234099940409",
   amount: 2000,
-  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  PBFPubKey: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X"
 };
 
 const App = () => {
-  const {initializePayment} = useRavePayment(config);
+  const { initializePayment } = useRavePayment(config);
   return (
     <div>
       <button onClick={() => initializePayment()}>Pay 2000</button>
@@ -49,17 +49,17 @@ export default App;
 ### Components
 
 ```js
-import React, {Component} from 'react';
-import {RaveProvider, RavePaymentButton} from 'react-ravepayment';
+import React, { Component } from "react";
+import { RaveProvider, RavePaymentButton } from "react-ravepayment";
 
 const config = {
-  txref: 'rave-123456',
-  customer_email: 'user@example.com',
-  customer_phone: '234099940409',
+  txref: "rave-123456",
+  customer_email: "user@example.com",
+  customer_phone: "234099940409",
   amount: 2000,
-  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  PBFPubKey: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X",
   onSuccess: () => {},
-  onClose: () => {},
+  onClose: () => {}
 };
 
 const App = () => {
