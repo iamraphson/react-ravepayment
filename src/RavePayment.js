@@ -10,8 +10,6 @@ class RavePayment extends Component {
       scriptLoaded: null,
       text: this.props.text || "Make Payment",
       class: this.props.class || "",
-      currency: this.props.currency || "NGN",
-      country: this.props.country || "NG"
     };
   }
 
@@ -61,8 +59,8 @@ class RavePayment extends Component {
           onclose: () => this.props.close(),
           callback: response => this.props.callback(response),
           meta: this.props.metadata || [{}],
-          currency: this.state.currency,
-          country: this.state.country,
+          currency: this.props.currency || "NGN",
+          country: this.props.country || "NG",
           customer_firstname: this.props.customer_firstname || "",
           customer_phone: this.props.customer_phone || "",
           customer_lastname: this.props.customer_lastname || "",
