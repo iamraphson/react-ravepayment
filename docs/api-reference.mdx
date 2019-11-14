@@ -1,0 +1,88 @@
+---
+name: API Reference
+route: '/reference/api'
+---
+
+# API
+
+`react-ravepayment` exports the following methods:
+
+- [`useRavePayment`](/reference/api#useRavePayment)
+- [`RaveProvider`](/reference/api#RaveProvider)
+- [`RavePaymentContext`](/reference/api#RavePaymentContext)
+- [`RavePayment`](/reference/api#RavePayment)
+- [`RavePaymentButton`](/reference/api#RavePaymentButton)
+
+---
+
+## `useRavePayment`
+
+```js
+function useRavePayment(
+  options: RaveProps
+): {initializePayment: (onSuccess?: Function, onClose?: Function) => void}
+```
+
+Create an instance of `rave-payment and attached the rave payment script to the page.
+
+The `useRavePayment` function accepts the following arguments:
+
+### `options` RaveProps
+
+An options object use to create the instance of the rave payment. See the
+[`useRavePayment` Options](/parameters#options) section for more details.
+
+### `initializePayment`
+
+Function to trigger the payment process. The function can be called with any component that accept `onClick` handler, it accepts two parameters which are optional and are function.
+
+## `RaveProvider`
+
+```js
+<RaveProvider {...options}>...</RaveProvider>
+```
+
+A react component to create a provider wrapper for rave payment which expose API to use from its child component. The componnt accepts the [Options](/parameters#options)` as props and React component as children. Other props include:
+
+| Props     | Type           | Default |
+| --------- | -------------- | ------- |
+| onSuccess | Function       | Empty   |
+| onClose   | Function       | Empty   |
+| children  | ReactComponent | Empty   |
+
+## `RavePaymentContxnt`
+
+```js
+<RavePaymentContext.Consumer>
+  {({initializePayment, onSuccess, onClose}) => ...}
+</RavePaymentContext.Consumer>
+or
+
+const { initializePayment } = useContext(RavePaymentContext)
+```
+
+The context allows you to extends rave provider `initializePayment` in a child component. NOTE: The context must be used in a component that has `RaveProvider` parent in the scope.
+
+## `RavePayment`
+
+```js
+<RavePayment {...options}>
+  {({initializePayment, onSuccess, onClose}) => ...}
+</RavePayment>
+```
+
+A react render props component to create a provider wrapper for rave payment which expose API to use from its child component. The componnt accepts the [Options](/parameters#options)` as props and React component as children. Other props include:
+
+| Props     | Type           | Default |
+| --------- | -------------- | ------- |
+| onSuccess | Function       | Empty   |
+| onClose   | Function       | Empty   |
+| children  | ReactComponent | Empty   |
+
+## `RavePaymentButton`
+
+```js
+<RavePaymentButton onClick={() => initializePayment()}>Pay 2000</RavePaymentButton>
+```
+
+A customizable react button component you can use to create trigger the rave payment. This component is to be used with the `RaveProvider` because it uses the `RavePaymentContext` exposed by the provider. It accpets all button props.

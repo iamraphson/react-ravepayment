@@ -1,0 +1,110 @@
+---
+name: Class Component
+menu: Usage
+route: '/usage/class'
+---
+
+## Class component
+
+If you are using the traditional class component you can use the `rave-payment` in the following ways:
+
+```js
+import React, {Component} from 'react';
+import {RaveProvider, RavePaymentButton} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  onSuccess: () => {},
+  onClose: () => {},
+};
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <RaveProvider {...config}>
+          <RavePaymentButton>Pay 2000</RavePaymentButton>
+          {/* <RavePaymentButton text="Pay 2000" /> */}
+        </RaveProvider>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+## Styling the RavePaymentButton
+
+The RavePaymentButton can be made just the way you wat by providing all `className` props or `style` props
+
+```js
+import React, {Component} from 'react';
+import {RaveProvider, RavePaymentButton} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+  onSuccess: () => {},
+  onClose: () => {},
+};
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <RaveProvider {...config}>
+          <RavePaymentButton className="custom-component">Pay 2000</RavePaymentButton>
+        </RaveProvider>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+## Using custom component
+
+You can also use custom component or nested children to trigger the `rave-payment` `initializePayment` function. This gives you the flexibility to use the `rave-payment` in more component with just one initialization.
+
+```js
+import React, {Component} from 'react';
+import {RaveProvider, RavePayment} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+
+};
+
+class App extends Component {
+  handleSuccess() {
+    ...
+  }
+  handleResponse() {
+    ...
+  }
+  render() {
+    return (
+      <div>
+        <RavePayment {...config}>
+          {({initializePayment}) => <button onClick={() => initializePayment(this.handleSuccess, this.handleResponse)}>Pay 2000</button>}
+        </RavePayment>
+      </div>
+    );
+  }
+};
+
+export default App;
+```

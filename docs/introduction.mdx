@@ -1,0 +1,56 @@
+---
+name: Introduction
+route: '/'
+---
+
+<div align="center">
+  <h1>react-ravepayment</h1>
+
+<p>A React library wrapper for implementing ReavePay Payment Gateway</p>
+
+</div>
+
+<hr />
+
+## Installation
+
+This module is distributed via [npm](https://www.npmjs.com/) which is bundled with
+[node](https://nodejs.org) and should be installed as one of your project's `dependencies`:
+
+```bash
+npm install react-ravepayment --save
+```
+
+or
+
+```bash
+yarn add react-ravepayment --save
+```
+
+### Usage
+
+### Hooks
+
+```js
+import React, {Component} from 'react';
+import {useRavePayment} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+};
+
+const App = () => {
+  const {initializePayment} = useRavePayment(config);
+  return (
+    <div>
+      <button onClick={() => initializePayment()}>Pay 2000</button>
+    </div>
+  );
+};
+
+export default App;
+```

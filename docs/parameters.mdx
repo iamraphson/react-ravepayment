@@ -1,0 +1,189 @@
+---
+name: Parameters
+route: '/parameters'
+---
+
+# Parameters
+
+## `options`
+
+An options object use to create the instance of the rave payment.
+
+### `customer_email`
+
+Customer email address. `Ex: user@foo.com`
+
+| Type   | Required |
+| ------ | -------- |
+| String | true     |
+
+### `customer_phome`
+
+Customer phone number. `Ex: 09061616161`
+
+| Type   | Required |
+| ------ | -------- |
+| String | true     |
+
+### `txref`
+
+Transaction reference, a uniquire key to distinguish your transaction `Ex: rave-123456`
+
+| Type   | Required |
+| ------ | -------- |
+| String | true     |
+
+### `amount`
+
+Transaction amount in number
+
+| Type   | Required |
+| ------ | -------- |
+| Number | true     |
+
+### `PBFPubKey`
+
+Your flutterwave public key
+
+| Type   | Required |
+| ------ | -------- |
+| String | true     |
+
+### `production`
+
+To use production mode or development mode, please turn this on when doing to production
+
+| Type    | Required | Default |
+| ------- | -------- | ------- |
+| Boolean | false    | false   |
+
+### `pay_button_text`
+
+The text to show on the payment button
+
+| Type   | Required | Default  |
+| ------ | -------- | -------- |
+| String | false    | Pay 2000 |
+
+### `integrity_hash`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `currency`
+
+The transaction currency, See the
+[`options` Currency](/parameters#options-currency) section for more details.
+
+| Type                                     | Required | Default |
+| ---------------------------------------- | -------- | ------- |
+| [Currency](/parameters#options-currency) | false    | NGN     |
+
+### `country`
+
+The transaction country, See the
+[`options` Country](/parameters#options-country) section for more details.
+
+| Type                                   | Required | Default |
+| -------------------------------------- | -------- | ------- |
+| [Country](/parameters#options-country) | false    | NG      |
+
+### `custom_title`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `custom_description`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `custom_logo`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `redirect_url`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `customer_firstname`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| String | false    | Empty   |
+
+### `payment_plan`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| Number | false    | Empty   |
+
+### `hosted_payment`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| Number | false    | Empty   |
+
+### `campaign_id`
+
+| Type   | Required | Default |
+| ------ | -------- | ------- |
+| Number | false    | Empty   |
+
+### `subaccounts`
+
+| Type  | Required | Default | Example          |
+| ----- | -------- | ------- | ---------------- |
+| Array | false    | Empty   | `[{id: string}]` |
+
+### `meta`
+
+| Type  | Required | Default | Example        |
+| ----- | -------- | ------- | -------------- |
+| Array | false    | Empty   | `[{foo: bar}]` |
+
+### `payment_options`
+
+| Type            | Required | Default | Example          |
+| --------------- | -------- | ------- | ---------------- |
+| string or Array | false    | Empty   | `['card', 'qr']` |
+
+Available options
+
+```
+'card' | 'account' | 'ussd' | 'qr' | 'mpesa' | 'mobilemoneyghana' | 'mobilemoneyuganda' | 'mobilemoneyrwanda'
+| 'mobilemoneyzambia' | 'mobilemoneytanzania' | 'barter' | 'bank transfer'
+```
+
+## `options` currency
+
+| Country       | Code    |
+| ------------- | ------- |
+| Nigeria       | NGN     |
+| United States | USD     |
+| Ghana         | GHS     |
+| Uganda        | UGX     |
+| Kenya         | KES     |
+| Zimbanbwe     | ZMW     |
+| Rwanda        | RWF     |
+| Cameron       | XAF     | XOF |
+| South Africa  | ZAR     |
+| Tanzania      | TZS     |
+| Other country | Nigeria |
+
+## `options` country
+
+| Country       | Code |
+| ------------- | ---- |
+| Nigeria       | NG   |
+| Ghana         | GH   |
+| Kenya         | KE   |
+| South Africa  | ZA   |
+| Other country | NG   |

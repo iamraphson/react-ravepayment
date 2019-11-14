@@ -1,0 +1,79 @@
+---
+name: Hooks
+menu: Usage
+route: '/usage/hooks'
+---
+
+## Hooks
+
+You can use the hooks librayr if your project support react v16.8 and above. The hooks API makes it easy to use the rave paymet API and it helps eradicate lots of boilerplate code. The hooks can only be used in a functional componet, which means you cannot use it in class component.
+
+```js
+import React from 'react';
+import {useRavePayment} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+};
+
+const App = () => {
+  const {initializePayment} = useRavePayment(config); // check the props table for all allowed props of the config
+  return (
+    <div>
+      <button onClick={() => initializePayment()}>Pay 2000</button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Providing custom `onClose` and `onSuccess`
+
+The `initializePayment` payment function accepts two parameter `onSuccess` and `onClose`
+
+```js
+import React from 'react';
+import {useRavePayment} from 'react-ravepayment';
+
+const config = {
+  txref: 'rave-123456',
+  customer_email: 'user@example.com',
+  customer_phone: '234099940409',
+  amount: 2000,
+  PBFPubKey: 'FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X',
+};
+
+const App = () => {
+  const {initializePayment} = useRavePayment(config);
+
+  function onClose() {
+    ...
+  }
+
+  function onSuccess() {
+    ...
+  }
+  return (
+    <div>
+      <button onClick={() => initializePayment(onSuccess, onClose)}>Pay 2000</button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+### NOTE
+
+You cannot use the `initializePayment` payment function in a your handler as follows:
+
+```js
+<button onClick={initializePayment}>Pay 2000</button>
+```
+
+the function requires two parameters which are optinal however using it like above would be passing the default parameter `event` from `onClick` handler on a component and that would cause an unitented behaviour.
