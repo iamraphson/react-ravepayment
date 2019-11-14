@@ -1,15 +1,15 @@
 import React from 'react';
 
-interface RaveContent {
+interface RaveContext {
   initializePayment: (onSuccess: Function, onClose: Function) => void;
   onClose: Function;
   onSuccess: Function;
 }
 
-const RavePaymentContent = React.createContext<RaveContent>({
+const RavePaymentContext = React.createContext<RaveContext>({
   initializePayment: () => {},
   onClose: () => {},
   onSuccess: () => {},
 });
 
-export default RavePaymentContent;
+export default RavePaymentContext;
