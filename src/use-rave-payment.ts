@@ -59,7 +59,7 @@ export default function useRavePayment(
         payment_plan,
         hosted_payment,
         campaign_id,
-        onClose: onClose ? onClose : (): void => {},
+        onclose: onClose ? onClose : (): void => {},
         callback: onSuccess ? onSuccess : (): void => {},
       };
       // @ts-ignore
