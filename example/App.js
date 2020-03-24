@@ -1,5 +1,5 @@
 import React from 'react';
-import { RaveProvider, RavePaymentButton, useRavePayment, RavePayment } from 'react-ravepayment';
+import { RaveProvider, RavePaymentButton, useRavePayment, RavePayment } from '../dist/index';
 import './App.css';
 
 

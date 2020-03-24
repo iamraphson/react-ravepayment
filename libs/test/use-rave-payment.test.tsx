@@ -72,8 +72,13 @@ describe('useRavePayment()', () => {
   });
 
   it('should accept being rendered in a container', () => {
-    const wrapper = ({children}: {children: any}): any => <div>{children}</div>;
-    const {result, rerender} = renderHook(() => useRavePayment(config), {wrapper});
+      console.log('wrapper')
+    const wrapper = ({ children }: { children: any }) => {
+         return <div>{children}</div>;
+    };
+
+    const {result, rerender} = renderHook(() => useRavePayment(config), { wrapper });
+
     rerender();
     act(() => {
       result.current.initializePayment();
