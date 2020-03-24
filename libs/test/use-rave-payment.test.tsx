@@ -72,8 +72,7 @@ describe('useRavePayment()', () => {
   });
 
   it('should accept being rendered in a container', () => {
-      console.log('wrapper')
-    const wrapper = ({ children }: { children: any }) => {
+    const wrapper: React.FC = ({ children }) => {
          return <div>{children}</div>;
     };
 
