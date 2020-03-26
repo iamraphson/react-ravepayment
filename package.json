@@ -1,6 +1,6 @@
 {
   "name": "react-ravepayment",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This is a reactJS library for implementing rave payment gateway",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
