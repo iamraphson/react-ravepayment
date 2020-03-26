@@ -31,7 +31,8 @@ const config = {
   customer_email: "user@example.com",
   customer_phone: "234099940409",
   amount: 2000,
-  PBFPubKey: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X"
+  PBFPubKey: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X",
+  production: false,
 };
 
 const App = () => {
@@ -58,6 +59,7 @@ const config = {
   customer_phone: "234099940409",
   amount: 2000,
   PBFPubKey: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXX-X",
+  production: false,
   onSuccess: () => {},
   onClose: () => {}
 };

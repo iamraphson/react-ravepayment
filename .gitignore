@@ -63,3 +63,4 @@ dist/
 
 .docz/
 site
+example/node_modules/

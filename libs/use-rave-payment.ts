@@ -63,7 +63,8 @@ export default function useRavePayment(
         callback: onSuccess ? onSuccess : (): void => {},
       };
       // @ts-ignore
-      window.getpaidSetup(raveOption);
+
+      window.getpaidSetup && window.getpaidSetup(raveOption);
     }
   }
 
