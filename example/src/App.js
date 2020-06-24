@@ -4,7 +4,7 @@ import {
     RavePaymentButton,
     useRavePayment,
     RavePayment
-} from './dist/index.es';
+} from './dist/index';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,7 +18,7 @@ const config = {
 };
 
 const RaveHookExample = () => {
-    const {initializePayment} = useRavePayment(config);
+    const { initializePayment} = useRavePayment(config);
     return (
         <div>
             <button onClick={() => {
@@ -32,7 +32,7 @@ function App() {
     const props = {
         ...config,
         onSuccess: () => {},
-        onClose: () => {}
+        onClose: () => { console.log("cool")}
     };
 
 
@@ -47,7 +47,7 @@ function App() {
         <RaveProvider {...props}>
             <RavePaymentButton>Pay 2000</RavePaymentButton>
             <RavePayment {...props}>
-                {({ initializePayment }) => <button onClick={() => initializePayment()}>Use render props 2000</button>}
+                {({ initializePayment,  }) => <button onClick={() => initializePayment()}>Use render props 2000</button>}
             </RavePayment>
         </RaveProvider>
         <RaveHookExample />
